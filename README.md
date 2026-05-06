@@ -34,14 +34,7 @@ Aplicación web para gestionar un catálogo de películas. Permite crear, consul
 
 ## Instrucciones para ejecutar el proyecto
 
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/<tu-usuario>/cineapp.git
-cd cineapp
-```
-
-### 2. Crear y activar entorno virtual
+### 1. Crear y activar entorno virtual
 
 ```bash
 python -m venv venv
@@ -57,19 +50,19 @@ macOS/Linux:
 source venv/bin/activate
 ```
 
-### 3. Instalar dependencias
+### 2. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Aplicar migraciones
+### 3. Aplicar migraciones
 
 ```bash
 python manage.py migrate
 ```
 
-### 5. Ejecutar el servidor
+### 4. Ejecutar el servidor
 
 ```bash
 python manage.py runserver
@@ -77,6 +70,6 @@ python manage.py runserver
 
 Abrir en el navegador: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-### 6. API REST
+### 5. API REST
 
 Disponible en: [http://127.0.0.1:8000/api/peliculas/](http://127.0.0.1:8000/api/peliculas/)
