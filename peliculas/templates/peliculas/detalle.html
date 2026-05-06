@@ -1,0 +1,44 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}{{ pelicula.titulo }} — CineApp{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h3 class="mb-0">{{ pelicula.titulo }}</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless">
+                    <tr>
+                        <th width="150">Director</th>
+                        <td>{{ pelicula.director }}</td>
+                    </tr>
+                    <tr>
+                        <th>Año</th>
+                        <td>{{ pelicula.anio }}</td>
+                    </tr>
+                    <tr>
+                        <th>Género</th>
+                        <td><span class="badge bg-secondary">{{ pelicula.genero }}</span></td>
+                    </tr>
+                    <tr>
+                        <th>Duración</th>
+                        <td>{{ pelicula.duracion_minutos }} minutos</td>
+                    </tr>
+                    <tr>
+                        <th>Sinopsis</th>
+                        <td>{{ pelicula.sinopsis }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <a href="{% url 'pelicula-editar' pelicula.pk %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'pelicula-eliminar' pelicula.pk %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'pelicula-lista' %}" class="btn btn-secondary ms-auto">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

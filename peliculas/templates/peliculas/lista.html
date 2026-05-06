@@ -1,0 +1,42 @@
+{% extends 'peliculas/base.html' %}
+
+{% block title %}Películas — CineApp{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Catálogo de Películas</h1>
+    <a href="{% url 'pelicula-crear' %}" class="btn btn-primary">+ Nueva Película</a>
+</div>
+
+{% if peliculas %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for pelicula in peliculas %}
+    <div class="col">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ pelicula.titulo }}</h5>
+                <p class="card-text text-muted mb-1">
+                    <strong>Director:</strong> {{ pelicula.director }}
+                </p>
+                <p class="card-text text-muted mb-2">
+                    <strong>Año:</strong> {{ pelicula.anio }} &nbsp;|&nbsp;
+                    <strong>Duración:</strong> {{ pelicula.duracion_minutos }} min
+                </p>
+                <span class="badge bg-secondary">{{ pelicula.genero }}</span>
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <a href="{% url 'pelicula-detalle' pelicula.pk %}" class="btn btn-sm btn-info text-white">Ver</a>
+                <a href="{% url 'pelicula-editar' pelicula.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'pelicula-eliminar' pelicula.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <p class="text-muted fs-5">No hay películas registradas aún.</p>
+    <a href="{% url 'pelicula-crear' %}" class="btn btn-primary">Agregar la primera película</a>
+</div>
+{% endif %}
+{% endblock %}
