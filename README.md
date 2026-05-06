@@ -73,3 +73,8 @@ Abrir en el navegador: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 ### 5. API REST
 
 Disponible en: [http://127.0.0.1:8000/api/peliculas/](http://127.0.0.1:8000/api/peliculas/)
+
+
+# IA
+
+- Se usó claude code para hacer el proyecto (yo lo ejecuté XD)
